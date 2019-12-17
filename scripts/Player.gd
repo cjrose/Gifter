@@ -40,6 +40,6 @@ func _physics_process(delta):
 	self.position = Vector2(player_pos_list[pos][0], player_pos_list[pos][1])
 	
 	if pos > 0:
-		$Sprite.flip_h = true
-	else: 
 		$Sprite.flip_h = false
+	else: 
+		$Sprite.flip_h = true

@@ -14,50 +14,44 @@ zoom = Vector2( 0.25, 0.25 )
 process_mode = 0
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272, 16 )
+position = Vector2( -16, 16 )
 
 [node name="Tables" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Table_1" parent="Tables" instance=ExtResource( 2 )]
-position = Vector2( 80, 128 )
+position = Vector2( 192, 128 )
 
 [node name="Table_2" parent="Tables" instance=ExtResource( 2 )]
-position = Vector2( 80, 96 )
+position = Vector2( 192, 96 )
 
 [node name="Table_3" parent="Tables" instance=ExtResource( 2 )]
-position = Vector2( 80, 64 )
+position = Vector2( 192, 64 )
 
 [node name="Table_4" parent="Tables" instance=ExtResource( 2 )]
-position = Vector2( 80, 32 )
+position = Vector2( 192, 32 )
 
 [node name="PlayerPositions" type="Node2D" parent="."]
-editor/display_folded = true
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="pos0" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 239, 16 )
+position = Vector2( 32, 16 )
 
 [node name="pos1" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 224, 32 )
+position = Vector2( 48, 32 )
 
 [node name="pos2" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 224, 64 )
+position = Vector2( 48, 64 )
 
 [node name="pos3" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 224, 96 )
+position = Vector2( 48, 96 )
 
 [node name="pos4" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 224, 128 )
+position = Vector2( 48, 128 )
 
 [node name="PresentPosition" type="Node2D" parent="."]
 visible = false
 position = Vector2( 256, 16 )
 
 [node name="Present" parent="." instance=ExtResource( 3 )]
-position = Vector2( 256, 16 )
+position = Vector2( 16, 16 )
 
 [node name="PresentInstances" type="Node2D" parent="."]
