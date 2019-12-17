@@ -9,6 +9,8 @@ var player_pos_list = []
 var carrying_present = false 
 var present_scene = load("res://_scenes/Present.tscn")
 
+signal throw_present
+
 
 func _ready():
 	var positions = $"../PlayerPositions"
@@ -31,9 +33,12 @@ func _process(delta):
 			var instance = present_scene.instance()
 			instance.present_color = pos
 			self.add_child(instance, true)
+		# facing towards the tables
 		if $Sprite.flip_h == false and carrying_present:
 			carrying_present = false
-			get_node("Present").queue_free()
+			var present_node = get_node("Present")
+			emit_signal("throw_present", pos, present_node.present_color)
+			present_node.queue_free()
 	
 	if Input.is_action_just_pressed('ui_left'):
 		$Sprite.flip_h = true
