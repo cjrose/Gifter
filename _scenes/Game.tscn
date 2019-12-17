@@ -13,10 +13,9 @@ zoom = Vector2( 0.25, 0.25 )
 process_mode = 0
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 224, 32 )
+position = Vector2( 272, 16 )
 
 [node name="Tables" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Table_1" parent="Tables" instance=ExtResource( 2 )]
 position = Vector2( 80, 128 )
@@ -31,11 +30,13 @@ position = Vector2( 80, 64 )
 position = Vector2( 80, 32 )
 
 [node name="PlayerPositions" type="Node2D" parent="."]
-editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+
+[node name="pos0" type="Node2D" parent="PlayerPositions"]
+position = Vector2( 239, 16 )
 
 [node name="pos1" type="Node2D" parent="PlayerPositions"]
 position = Vector2( 224, 32 )
