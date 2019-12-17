@@ -17,41 +17,56 @@ process_mode = 0
 position = Vector2( -16, 16 )
 
 [node name="Tables" type="Node2D" parent="."]
+editor/display_folded = true
 
-[node name="Table_1" parent="Tables" instance=ExtResource( 2 )]
-position = Vector2( 192, 128 )
+[node name="table_0" parent="Tables" instance=ExtResource( 2 )]
+position = Vector2( 176, 32 )
 
-[node name="Table_2" parent="Tables" instance=ExtResource( 2 )]
-position = Vector2( 192, 96 )
+[node name="table_1" parent="Tables" instance=ExtResource( 2 )]
+position = Vector2( 176, 64 )
 
-[node name="Table_3" parent="Tables" instance=ExtResource( 2 )]
-position = Vector2( 192, 64 )
+[node name="table_2" parent="Tables" instance=ExtResource( 2 )]
+position = Vector2( 176, 96 )
 
-[node name="Table_4" parent="Tables" instance=ExtResource( 2 )]
-position = Vector2( 192, 32 )
+[node name="table_3" parent="Tables" instance=ExtResource( 2 )]
+position = Vector2( 176, 128 )
 
 [node name="PlayerPositions" type="Node2D" parent="."]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="pos0" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 32, 16 )
+position = Vector2( 32, 32 )
 
 [node name="pos1" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 48, 32 )
+position = Vector2( 32, 64 )
 
 [node name="pos2" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 48, 64 )
+position = Vector2( 32, 96 )
 
 [node name="pos3" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 48, 96 )
-
-[node name="pos4" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 48, 128 )
-
-[node name="PresentPosition" type="Node2D" parent="."]
-visible = false
-position = Vector2( 256, 16 )
-
-[node name="Present" parent="." instance=ExtResource( 3 )]
-position = Vector2( 16, 16 )
+position = Vector2( 32, 128 )
 
 [node name="PresentInstances" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="red" parent="PresentInstances" instance=ExtResource( 3 )]
+position = Vector2( 16, 32 )
+
+[node name="green" parent="PresentInstances" instance=ExtResource( 3 )]
+position = Vector2( 16, 64 )
+present_color = 1
+
+[node name="blue" parent="PresentInstances" instance=ExtResource( 3 )]
+position = Vector2( 16, 96 )
+present_color = 2
+
+[node name="yellow" parent="PresentInstances" instance=ExtResource( 3 )]
+position = Vector2( 16, 128 )
+present_color = 3

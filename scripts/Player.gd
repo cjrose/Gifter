@@ -6,10 +6,8 @@ var pos = 0
 var attempts = 4
 # List of position vectors
 var player_pos_list = []
-
 var carrying_present = false 
 var present_scene = load("res://_scenes/Present.tscn")
-signal player_pickup
 
 
 func _ready():
@@ -27,19 +25,20 @@ func _process(delta):
 		if pos < len(player_pos_list) - 1:
 			pos += 1
 	if Input.is_action_just_pressed('ui_select'):
-		if pos == 0 and not carrying_present:
+		# facing towards the gift droppers
+		if $Sprite.flip_h == true and not carrying_present:
 			carrying_present = true
-			emit_signal("player_pickup")
-			var type_of_present = get_node("/root/Game/Present").present_type
 			var instance = present_scene.instance()
-			self.add_child(instance)
-		if pos != 0 and carrying_present:
-			pass
+			instance.present_color = pos
+			self.add_child(instance, true)
+		if $Sprite.flip_h == false and carrying_present:
+			carrying_present = false
+			get_node("Present").queue_free()
+	
+	if Input.is_action_just_pressed('ui_left'):
+		$Sprite.flip_h = true
+	if Input.is_action_just_pressed('ui_right'):
+		$Sprite.flip_h = false
 
 func _physics_process(delta):
 	self.position = Vector2(player_pos_list[pos][0], player_pos_list[pos][1])
-	
-	if pos > 0:
-		$Sprite.flip_h = false
-	else: 
-		$Sprite.flip_h = true
