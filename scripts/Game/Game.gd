@@ -12,7 +12,7 @@ export var progression = 0.15
 # Max amount of times player can fail to deliver a present
 export var lives = 3
 # Seconds after a failed delivery that spawns will not happen
-export var fail_time_buffer = 4
+export var fail_time_buffer = 5
 
 # Keeps track of player score
 # 100 pts for successful gifting
@@ -25,7 +25,7 @@ signal score_change
 signal lives_change
 
 var rng = RandomNumberGenerator.new()
-var elf_enemy_scene = load("res://_scenes/ElfEnemy.tscn")
+var elf_enemy_scene = load("res://_scenes/Game/ElfEnemy.tscn")
 
 func _ready():
 	rng.randomize()
@@ -71,7 +71,7 @@ func _spawn_elf():
 		new_instance.moving = true
 
 func _on_gift_failed_delivery():
-	$Timer.start(fail_time_buffer)
+	_lose_life()
 	_update_score(self.points[2])
 
 func _on_gift_successful_delivery():
@@ -86,9 +86,21 @@ func _update_score(points):
 		self.score = 0
 	emit_signal("score_change", self.score)
 
-func _update_lives(amt):
-	self.lives -= amt
-	if self.score < 0:
-		pass
-		# fail state
+func _lose_life():
+	self.lives -= 1
 	emit_signal("lives_change", self.lives)
+	_reset_game()
+
+func _reset_game():
+	$Character.pos = 0
+	# try again text maybe?
+	
+	$Timer.start(fail_time_buffer)
+	
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for enemy in enemies:
+		enemy.queue_free()
+	
+	var presents = get_tree().get_nodes_in_group("present")
+	for present in presents:
+		present.queue_free()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Game/HUD.gd" type="Script" id=1]
 [ext_resource path="res://font/ps2p.tres" type="DynamicFont" id=2]
 
 [node name="HUD" type="MarginContainer"]

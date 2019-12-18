@@ -25,7 +25,7 @@ func _process(delta):
 			pos += 1
 	if Input.is_action_just_pressed('ui_select'):
 		# facing towards the gift droppers
-		if $AnimatedSprite.flip_h == true and not carrying_present:
+		if $AnimatedSprite.flip_h == true:
 			carrying_present = true
 			$AnimatedSprite.frame = pos+2
 		# facing towards the tables

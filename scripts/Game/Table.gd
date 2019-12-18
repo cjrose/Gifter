@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var present_scene = load("res://_scenes/Present.tscn")
+var present_scene = load("res://_scenes/Game/Present.tscn")
 export var table_id = 0
 
 func _ready():
