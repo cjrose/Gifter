@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 # 0 	Red
 # 1 	Green

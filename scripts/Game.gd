@@ -8,7 +8,7 @@ export var difficulty = 5
 # Minimum amount of time before elf spawns
 export var min_time = 3
 # Time to be removed from difficulty every spawn
-export var progression = 0.1
+export var progression = 0.15
 
 var rng = RandomNumberGenerator.new()
 var elf_enemy_scene = load("res://_scenes/ElfEnemy.tscn")

@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 # 0 - RED
 # 1 - GREEN
@@ -14,7 +14,8 @@ export var difference = 0.15
 var move_speed
 var moving = false
 var gifted = false
-var end_x = 0
+var table_start_x
+var table_end_x
 
 var rng = RandomNumberGenerator.new()
 
@@ -29,14 +30,29 @@ func _ready():
 	if elf_color == 3:
 		$AnimatedSprite.play("run_y")
 		
-	end_x = get_parent().get_node("TableStart").position.x
+	table_start_x = get_parent().get_node("TableStart").position.x
+	table_end_x = get_parent().get_node("TableEnd").position.x
 	move_speed = rng.randf_range(base_speed - difference, base_speed + difference)
 	
 func _physics_process(delta):
 	# TODO add present collision detection
-	if moving:
+	if moving and not gifted:
 		self.position += Vector2(-move_speed, 0)
 	
-	if end_x > self.position.x:
-		print('delete elf')
+	if moving and gifted:
+		self.position += Vector2(move_speed, 0)
+	
+	if not gifted and table_start_x > self.position.x:
 		self.queue_free()
+		
+	if gifted and table_end_x < self.position.x:
+		self.queue_free()
+
+func _on_ElfEnemy_area_entered(area):
+	if "Present" in area.name:
+		if area.present_color == self.elf_color:
+			area.queue_free()
+			gifted = true
+			$AnimatedSprite.animation = "gift"
+			$AnimatedSprite.frame = self.elf_color
+			$AnimatedSprite.flip_h = true

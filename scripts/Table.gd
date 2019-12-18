@@ -13,5 +13,4 @@ func _on_present_throw(id, present_color):
 		instance.present_color = present_color
 		self.add_child(instance, true)
 		instance.position = $TableStart.position
-		instance.mode = RigidBody2D.MODE_KINEMATIC
 		instance.moving = true
