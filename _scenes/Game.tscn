@@ -19,7 +19,6 @@ process_mode = 0
 position = Vector2( -16, 16 )
 
 [node name="Tables" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="table_0" parent="Tables" instance=ExtResource( 3 )]
 position = Vector2( 176, 32 )
