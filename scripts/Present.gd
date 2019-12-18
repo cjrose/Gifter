@@ -8,20 +8,17 @@ extends RigidBody2D
 export var present_color = 0
 var move_speed = 0.75
 var moving = false
+var end_x = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.frame = present_color
+	end_x = get_parent().position.x
 
 func _physics_process(delta):
 	if moving:
 		position += Vector2(move_speed, 0)
 	
-	
-	# This is super jank
-	# Make this not jank later
-	var parent = get_parent()
-	if "table" in parent.name:
-		if position.x > $"../TableEnd".position.x:
-			self.queue_free()
+	if self.position.x > end_x:
+		self.queue_free()
 	

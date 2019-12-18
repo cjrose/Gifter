@@ -9,7 +9,7 @@ var elf_color
 # base move speed
 export var base_speed = 0.5
 # amount this move speed is allowed to vary by
-export var difference = 0.25
+export var difference = 0.15
 
 var move_speed
 var moving = false

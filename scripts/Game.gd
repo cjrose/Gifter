@@ -22,7 +22,6 @@ func _on_Timer_timeout():
 	
 	$Timer.start(difficulty)
 	if difficulty > min_time:
-		print('difficulty', difficulty)
 		difficulty -= progression
 
 func _spawn_elf():

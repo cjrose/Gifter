@@ -22,7 +22,7 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "run_b",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": false,
@@ -32,17 +32,17 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "run_r",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "run_y",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "run_g",
-"speed": 1.0
+"speed": 2.0
 } ]
 
 [node name="ElfEnemy" type="RigidBody2D"]
