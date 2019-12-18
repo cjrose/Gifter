@@ -44,9 +44,13 @@ func _physics_process(delta):
 	
 	if not gifted and table_start_x > self.position.x:
 		self.queue_free()
+		var game_node = get_node("/Root/Game")
+		game_node.score += game_node.points[2]
 		
 	if gifted and table_end_x < self.position.x:
 		self.queue_free()
+		var game_node = get_node("/Root/Game")
+		game_node.score += game_node.points[0]
 
 func _on_ElfEnemy_area_entered(area):
 	if "Present" in area.name:

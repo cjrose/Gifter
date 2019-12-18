@@ -10,6 +10,14 @@ export var min_time = 3
 # Time to be removed from difficulty every spawn
 export var progression = 0.15
 
+# Keeps track of player score
+# 100 pts for successful gifting
+# -50 pts for a gift that reaches the end of the table without being picked up
+# -100 pts for letting the enemy elf reach the end of the table
+var score = 0
+
+var points = [100, -50, -100]
+
 var rng = RandomNumberGenerator.new()
 var elf_enemy_scene = load("res://_scenes/ElfEnemy.tscn")
 

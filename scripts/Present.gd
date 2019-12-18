@@ -21,4 +21,6 @@ func _physics_process(delta):
 	
 	if self.position.x > end_x:
 		self.queue_free()
+		var game_node = get_node("/Root/Game")
+		game_node.score += game_node.points[1]
 	
