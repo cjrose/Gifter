@@ -19,6 +19,7 @@ process_mode = 0
 position = Vector2( -16, 16 )
 
 [node name="Tables" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="table_0" parent="Tables" instance=ExtResource( 3 )]
 position = Vector2( 176, 32 )
@@ -55,6 +56,7 @@ position = Vector2( 32, 96 )
 position = Vector2( 32, 128 )
 
 [node name="PresentInstances" type="Node2D" parent="."]
+editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -74,3 +76,8 @@ present_color = 2
 [node name="yellow" parent="PresentInstances" instance=ExtResource( 4 )]
 position = Vector2( 16, 128 )
 present_color = 3
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 0
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
