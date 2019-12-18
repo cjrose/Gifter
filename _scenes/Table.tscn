@@ -20,4 +20,4 @@ shape = SubResource( 1 )
 position = Vector2( -125, -8 )
 
 [node name="TableEnd" type="Node2D" parent="."]
-position = Vector2( 125, -10 )
+position = Vector2( 125, -8 )

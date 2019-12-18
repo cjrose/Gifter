@@ -16,3 +16,12 @@ func _ready():
 func _physics_process(delta):
 	if moving:
 		position += Vector2(move_speed, 0)
+	
+	
+	# This is super jank
+	# Make this not jank later
+	var parent = get_parent()
+	if "table" in parent.name:
+		if position.x > $"../TableEnd".position.x:
+			self.queue_free()
+	
