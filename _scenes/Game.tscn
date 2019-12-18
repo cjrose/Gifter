@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://_scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://_scenes/Table.tscn" type="PackedScene" id=3]
-[ext_resource path="res://_scenes/Present.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/presents/placeholder-present-pickup.png" type="Texture" id=4]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -37,47 +37,42 @@ position = Vector2( 176, 128 )
 table_id = 3
 
 [node name="PlayerPositions" type="Node2D" parent="."]
-editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="pos0" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 32, 32 )
+position = Vector2( 37, 32 )
 
 [node name="pos1" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 32, 64 )
+position = Vector2( 37, 64 )
 
 [node name="pos2" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 32, 96 )
+position = Vector2( 37, 96 )
 
 [node name="pos3" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 32, 128 )
-
-[node name="PresentInstances" type="Node2D" parent="."]
-editor/display_folded = true
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="red" parent="PresentInstances" instance=ExtResource( 4 )]
-position = Vector2( 16, 32 )
-
-[node name="green" parent="PresentInstances" instance=ExtResource( 4 )]
-position = Vector2( 16, 64 )
-present_color = 1
-
-[node name="blue" parent="PresentInstances" instance=ExtResource( 4 )]
-position = Vector2( 16, 96 )
-present_color = 2
-
-[node name="yellow" parent="PresentInstances" instance=ExtResource( 4 )]
-position = Vector2( 16, 128 )
-present_color = 3
+position = Vector2( 37, 128 )
 
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
 one_shot = true
+
+[node name="Droppers" type="Node2D" parent="."]
+
+[node name="dropper_0" type="Sprite" parent="Droppers"]
+position = Vector2( 12.5, 34 )
+texture = ExtResource( 4 )
+
+[node name="dropper_1" type="Sprite" parent="Droppers"]
+position = Vector2( 12.5, 66 )
+texture = ExtResource( 4 )
+
+[node name="dropper_2" type="Sprite" parent="Droppers"]
+position = Vector2( 12.5, 98 )
+texture = ExtResource( 4 )
+
+[node name="dropper_3" type="Sprite" parent="Droppers"]
+position = Vector2( 12.5, 130 )
+texture = ExtResource( 4 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

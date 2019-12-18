@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Present.gd" type="Script" id=1]
-[ext_resource path="res://sprites/presents/red.png" type="Texture" id=2]
-[ext_resource path="res://sprites/presents/green.png" type="Texture" id=3]
-[ext_resource path="res://sprites/presents/blue.png" type="Texture" id=4]
-[ext_resource path="res://sprites/presents/yellow.png" type="Texture" id=5]
+[ext_resource path="res://sprites/presents/present-sprite-red.png" type="Texture" id=2]
+[ext_resource path="res://sprites/presents/present-sprite-green.png" type="Texture" id=3]
+[ext_resource path="res://sprites/presents/present-sprite-blue.png" type="Texture" id=4]
+[ext_resource path="res://sprites/presents/present-sprite-yellow.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2, 2 )
@@ -26,5 +26,4 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
