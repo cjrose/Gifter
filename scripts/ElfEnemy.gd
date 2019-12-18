@@ -19,6 +19,9 @@ var table_end_x
 
 var rng = RandomNumberGenerator.new()
 
+signal gift_failed_delivery
+signal gift_successful_delivery
+
 func _ready():
 	rng.randomize()
 	if elf_color == 0:
@@ -33,6 +36,8 @@ func _ready():
 	table_start_x = get_parent().get_node("TableStart").position.x
 	table_end_x = get_parent().get_node("TableEnd").position.x
 	move_speed = rng.randf_range(base_speed - difference, base_speed + difference)
+	self.connect("gift_failed_delivery", $"/root/Game", "_on_gift_failed_delivery")
+	self.connect("gift_successful_delivery", $"/root/Game", "_on_gift_successful_delivery")
 	
 func _physics_process(delta):
 	# TODO add present collision detection
@@ -42,15 +47,12 @@ func _physics_process(delta):
 	if moving and gifted:
 		self.position += Vector2(move_speed, 0)
 	
-	if not gifted and table_start_x > self.position.x:
+	if not gifted and table_start_x + 5 > self.position.x:
+		emit_signal("gift_failed_delivery")
 		self.queue_free()
-		var game_node = get_node("/Root/Game")
-		game_node.score += game_node.points[2]
 		
 	if gifted and table_end_x < self.position.x:
 		self.queue_free()
-		var game_node = get_node("/Root/Game")
-		game_node.score += game_node.points[0]
 
 func _on_ElfEnemy_area_entered(area):
 	if "Present" in area.name:
@@ -60,3 +62,4 @@ func _on_ElfEnemy_area_entered(area):
 			$AnimatedSprite.animation = "gift"
 			$AnimatedSprite.frame = self.elf_color
 			$AnimatedSprite.flip_h = true
+			emit_signal("gift_successful_delivery")

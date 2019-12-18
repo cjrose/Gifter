@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/presents/placeholder-present-pickup.png" type="Texture" id=2]
 [ext_resource path="res://_scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://_scenes/Table.tscn" type="PackedScene" id=4]
+[ext_resource path="res://_scenes/HUD.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,6 +15,7 @@ one_shot = true
 
 [node name="Droppers" type="Node2D" parent="."]
 editor/display_folded = true
+scale = Vector2( 4, 4 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -39,14 +41,14 @@ texture = ExtResource( 2 )
 scale = Vector2( 0.25, 0.25 )
 anchor_mode = 0
 current = true
-zoom = Vector2( 0.25, 0.25 )
-process_mode = 0
 
 [node name="Character" parent="." instance=ExtResource( 3 )]
-position = Vector2( -16, 16 )
+position = Vector2( -96, 12 )
+scale = Vector2( 4, 4 )
 
 [node name="Tables" type="Node2D" parent="."]
 editor/display_folded = true
+scale = Vector2( 4, 4 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -69,20 +71,22 @@ table_id = 3
 
 [node name="PlayerPositions" type="Node2D" parent="."]
 editor/display_folded = true
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
 
 [node name="pos0" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 37, 32 )
+position = Vector2( 160, 128 )
 
 [node name="pos1" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 37, 64 )
+position = Vector2( 160, 256 )
 
 [node name="pos2" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 37, 96 )
+position = Vector2( 160, 384 )
 
 [node name="pos3" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 37, 128 )
+position = Vector2( 160, 512 )
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 356.0
+margin_bottom = 44.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

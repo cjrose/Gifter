@@ -15,8 +15,9 @@ export var progression = 0.15
 # -50 pts for a gift that reaches the end of the table without being picked up
 # -100 pts for letting the enemy elf reach the end of the table
 var score = 0
-
 var points = [100, -50, -100]
+
+signal score_change
 
 var rng = RandomNumberGenerator.new()
 var elf_enemy_scene = load("res://_scenes/ElfEnemy.tscn")
@@ -24,6 +25,7 @@ var elf_enemy_scene = load("res://_scenes/ElfEnemy.tscn")
 func _ready():
 	rng.randomize()
 	$Timer.start(initial_startup_time)
+	self.connect("score_change", $HUD, "_on_score_change")
 
 func _on_Timer_timeout():
 	_spawn_elf()
@@ -60,3 +62,15 @@ func _spawn_elf():
 		$Tables/table_3.add_child(new_instance)
 		new_instance.position = $Tables/table_3/TableEnd.position
 		new_instance.moving = true
+
+func _on_gift_failed_delivery():
+	self.score += self.points[2]
+	emit_signal("score_change", self.score)
+
+func _on_gift_successful_delivery():
+	self.score += self.points[0]
+	emit_signal("score_change", self.score)
+
+func _on_gift_reached_end():
+	self.score += self.points[1]
+	emit_signal("score_change", self.score)

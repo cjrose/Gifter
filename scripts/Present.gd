@@ -10,17 +10,19 @@ var move_speed = 0.75
 var moving = false
 var end_x = 0
 
+signal gift_reached_end
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.frame = present_color
 	end_x = get_parent().position.x
+	self.connect("gift_reached_end", $"/root/Game", "_on_gift_reached_end")
 
 func _physics_process(delta):
 	if moving:
 		position += Vector2(move_speed, 0)
 	
 	if self.position.x > end_x:
+		emit_signal("gift_reached_end")
 		self.queue_free()
-		var game_node = get_node("/Root/Game")
-		game_node.score += game_node.points[1]
 	

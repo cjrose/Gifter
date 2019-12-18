@@ -2,8 +2,6 @@ extends RigidBody2D
 
 # Preset position of the player
 var pos = 0
-# Number of "lives" the player has
-var attempts = 4
 # List of position vectors
 var player_pos_list = []
 var carrying_present = false 
