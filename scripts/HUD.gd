@@ -9,6 +9,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_score_change(score):
-	print(score)
 	var text = "SCORE: " + ("%08d" % score)
-	$VBoxContainer/Score.text = text
+	$HBoxContainer/Score.text = text
+
+func _on_lives_change(amt):
+	var text = "LIVES: " + str(amt)
+	$HBoxContainer/Lives.text = text

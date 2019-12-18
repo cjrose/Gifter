@@ -15,7 +15,7 @@ signal gift_reached_end
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.frame = present_color
-	end_x = get_parent().position.x
+	end_x = $"../TableEnd".position.x
 	self.connect("gift_reached_end", $"/root/Game", "_on_gift_reached_end")
 
 func _physics_process(delta):

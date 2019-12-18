@@ -58,7 +58,8 @@ func _on_ElfEnemy_area_entered(area):
 	if "Present" in area.name:
 		if area.present_color == self.elf_color:
 			area.queue_free()
-			gifted = true
+			self.gifted = true
+			self.move_speed = (base_speed + base_speed)
 			$AnimatedSprite.animation = "gift"
 			$AnimatedSprite.frame = self.elf_color
 			$AnimatedSprite.flip_h = true

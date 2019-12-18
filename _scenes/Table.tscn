@@ -17,7 +17,7 @@ shape = SubResource( 1 )
 position = Vector2( -125, -8 )
 
 [node name="TableEnd" type="Node2D" parent="."]
-position = Vector2( 125, -18 )
+position = Vector2( 85, -18 )
 
 [node name="belt" type="Node2D" parent="."]
 editor/display_folded = true

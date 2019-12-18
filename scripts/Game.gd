@@ -4,11 +4,15 @@ extends Node2D
 var initial_startup_time = 3
 # This controls the seconds before another elf is spawned
 # gradually decreases over game lifespan
-export var difficulty = 5
+export var difficulty = 4
 # Minimum amount of time before elf spawns
-export var min_time = 3
+export var min_time = 2
 # Time to be removed from difficulty every spawn
 export var progression = 0.15
+# Max amount of times player can fail to deliver a present
+export var lives = 3
+# Seconds after a failed delivery that spawns will not happen
+export var fail_time_buffer = 4
 
 # Keeps track of player score
 # 100 pts for successful gifting
@@ -18,6 +22,7 @@ var score = 0
 var points = [100, -50, -100]
 
 signal score_change
+signal lives_change
 
 var rng = RandomNumberGenerator.new()
 var elf_enemy_scene = load("res://_scenes/ElfEnemy.tscn")
@@ -26,6 +31,8 @@ func _ready():
 	rng.randomize()
 	$Timer.start(initial_startup_time)
 	self.connect("score_change", $HUD, "_on_score_change")
+	self.connect("lives_change", $HUD, "_on_lives_change")
+	emit_signal("lives_change", self.lives)
 
 func _on_Timer_timeout():
 	_spawn_elf()
@@ -64,13 +71,24 @@ func _spawn_elf():
 		new_instance.moving = true
 
 func _on_gift_failed_delivery():
-	self.score += self.points[2]
-	emit_signal("score_change", self.score)
+	$Timer.start(fail_time_buffer)
+	_update_score(self.points[2])
 
 func _on_gift_successful_delivery():
-	self.score += self.points[0]
-	emit_signal("score_change", self.score)
+	_update_score(self.points[0])
 
 func _on_gift_reached_end():
-	self.score += self.points[1]
+	_update_score(self.points[1])
+
+func _update_score(points):
+	self.score += points
+	if self.score < 0:
+		self.score = 0
 	emit_signal("score_change", self.score)
+
+func _update_lives(amt):
+	self.lives -= amt
+	if self.score < 0:
+		pass
+		# fail state
+	emit_signal("lives_change", self.lives)
