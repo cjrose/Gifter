@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Game/Game.gd" type="Script" id=1]
-[ext_resource path="res://sprites/presents/placeholder-present-pickup.png" type="Texture" id=2]
-[ext_resource path="res://_scenes/Game/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://_scenes/Game/Table.tscn" type="PackedScene" id=4]
-[ext_resource path="res://_scenes/Game/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/presents/red-present-pickup.png" type="Texture" id=2]
+[ext_resource path="res://sprites/presents/green-present-pickup.png" type="Texture" id=3]
+[ext_resource path="res://sprites/presents/blue-present-pickup.png" type="Texture" id=4]
+[ext_resource path="res://sprites/presents/yellow-present-pickup.png" type="Texture" id=5]
+[ext_resource path="res://_scenes/Game/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://_scenes/Game/Table.tscn" type="PackedScene" id=7]
+[ext_resource path="res://_scenes/Game/HUD.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -27,22 +30,22 @@ texture = ExtResource( 2 )
 
 [node name="dropper_1" type="Sprite" parent="Droppers"]
 position = Vector2( 12.5, 66 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="dropper_2" type="Sprite" parent="Droppers"]
 position = Vector2( 12.5, 98 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="dropper_3" type="Sprite" parent="Droppers"]
 position = Vector2( 12.5, 130 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2( 0.25, 0.25 )
 anchor_mode = 0
 current = true
 
-[node name="Character" parent="." instance=ExtResource( 3 )]
+[node name="Character" parent="." instance=ExtResource( 6 )]
 position = Vector2( -96, 12 )
 scale = Vector2( 4, 4 )
 
@@ -54,18 +57,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="table_0" parent="Tables" instance=ExtResource( 4 )]
+[node name="table_0" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 176, 32 )
 
-[node name="table_1" parent="Tables" instance=ExtResource( 4 )]
+[node name="table_1" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 176, 64 )
 table_id = 1
 
-[node name="table_2" parent="Tables" instance=ExtResource( 4 )]
+[node name="table_2" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 176, 96 )
 table_id = 2
 
-[node name="table_3" parent="Tables" instance=ExtResource( 4 )]
+[node name="table_3" parent="Tables" instance=ExtResource( 7 )]
 position = Vector2( 176, 128 )
 table_id = 3
 
@@ -84,7 +87,7 @@ position = Vector2( 160, 384 )
 [node name="pos3" type="Node2D" parent="PlayerPositions"]
 position = Vector2( 160, 512 )
 
-[node name="HUD" parent="." instance=ExtResource( 5 )]
+[node name="HUD" parent="." instance=ExtResource( 8 )]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 356.0
