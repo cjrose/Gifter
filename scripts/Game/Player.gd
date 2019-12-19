@@ -23,21 +23,17 @@ func _process(delta):
 	if Input.is_action_just_pressed('ui_down'):
 		if pos < len(player_pos_list) - 1:
 			pos += 1
-	if Input.is_action_just_pressed('ui_select'):
-		# facing towards the gift droppers
-		if $AnimatedSprite.flip_h == true:
-			carrying_present = true
-			$AnimatedSprite.frame = pos+2
-		# facing towards the tables
-		if $AnimatedSprite.flip_h == false and carrying_present:
-			carrying_present = false
-			emit_signal("throw_present", pos, $AnimatedSprite.frame-2)
-			$AnimatedSprite.frame = 0
 	
 	if Input.is_action_just_pressed('ui_left'):
 		$AnimatedSprite.flip_h = true
+		carrying_present = true
+		$AnimatedSprite.frame = self.pos + 2
+		
 	if Input.is_action_just_pressed('ui_right'):
 		$AnimatedSprite.flip_h = false
+		if carrying_present:
+			emit_signal("throw_present", pos, $AnimatedSprite.frame - 2)
+			$AnimatedSprite.frame = 0
 
 func _physics_process(delta):
 	self.position = Vector2(player_pos_list[pos][0], player_pos_list[pos][1])
