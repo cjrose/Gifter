@@ -12,7 +12,7 @@ export var progression = 0.15
 # Max amount of times player can fail to deliver a present
 export var lives = 3
 # Seconds after a failed delivery that spawns will not happen
-export var fail_time_buffer = 5
+export var fail_time_buffer = 4
 
 # Keeps track of player score
 # 100 pts for successful gifting
@@ -89,18 +89,29 @@ func _update_score(points):
 func _lose_life():
 	self.lives -= 1
 	emit_signal("lives_change", self.lives)
-	_reset_game()
+	if lives == 0:
+		pass
+	else:
+		_reset_game()
 
 func _reset_game():
+	$Timer.stop()
 	$Character.pos = 0
-	# try again text maybe?
-	
-	$Timer.start(fail_time_buffer)
+	$FailureText.visible = true
+	$FailureText/Cooldown.start(fail_time_buffer)
 	
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
-		enemy.queue_free()
+		if enemy.failed == false:
+			enemy.queue_free()
 	
 	var presents = get_tree().get_nodes_in_group("present")
 	for present in presents:
 		present.queue_free()
+
+func _on_Cooldown_timeout():
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	for enemy in enemies:
+		enemy.queue_free()
+	$Timer.start(difficulty)
+	$FailureText.visible = false

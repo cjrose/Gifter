@@ -26,7 +26,6 @@ func _physics_process(delta):
 		inst.position.y = (-50) # magic numbers weeeeeeeeeeee
 		inst.present_color = rng.randi_range(0, 3)
 		self.add_child(inst, true)
-		print(inst.name)
 		counter = delay
 
 	var presents = get_tree().get_nodes_in_group("present")

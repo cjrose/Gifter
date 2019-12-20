@@ -2,7 +2,7 @@ extends VBoxContainer
 
 var GameScene = "res://_scenes/Game/Game.tscn"
 var CreditsScene = "res://_scenes/Credits.tscn"
-var HowToScene = "res://_scenes/HowTo.tscn"
+var HowToScene = "res://_scenes/HowToPlay.tscn"
 
 var modulate_hover = Color(0.5, 0.5, 0.5, 1)
 var modulate_not_hover = Color(1, 1, 1, 1)

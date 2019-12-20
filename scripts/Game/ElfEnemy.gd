@@ -14,6 +14,7 @@ export var difference = 0.15
 var move_speed
 var moving = false
 var gifted = false
+var failed = false
 var table_start_x
 var table_end_x
 
@@ -41,15 +42,23 @@ func _ready():
 	
 func _physics_process(delta):
 	# TODO add present collision detection
-	if moving and not gifted:
+	if moving and not gifted and not failed:
 		self.position += Vector2(-move_speed, 0)
 	
 	if moving and gifted:
 		self.position += Vector2(move_speed, 0)
 	
-	if not gifted and table_start_x + 5 > self.position.x:
+	if not gifted and table_start_x + 5 > self.position.x and not failed:
+		failed = true
 		emit_signal("gift_failed_delivery")
-		self.queue_free()
+		if elf_color == 0:
+			$AnimatedSprite.play("stop_r")
+		if elf_color == 1:
+			$AnimatedSprite.play("stop_g")
+		if elf_color == 2:
+			$AnimatedSprite.play("stop_b")
+		if elf_color == 3:
+			$AnimatedSprite.play("stop_y")
 		
 	if gifted and table_end_x < self.position.x:
 		self.queue_free()
