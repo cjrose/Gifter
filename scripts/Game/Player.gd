@@ -5,6 +5,7 @@ var pos = 0
 # List of position vectors
 var player_pos_list = []
 var carrying_present = false 
+var movable = true
 
 signal throw_present
 
@@ -29,7 +30,7 @@ func _process(delta):
 		carrying_present = true
 		$AnimatedSprite.frame = self.pos + 2
 		
-	if Input.is_action_just_pressed('ui_right'):
+	if movable and Input.is_action_just_pressed('ui_right'):
 		$AnimatedSprite.flip_h = false
 		if carrying_present:
 			emit_signal("throw_present", pos, $AnimatedSprite.frame - 2)

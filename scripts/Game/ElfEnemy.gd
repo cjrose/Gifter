@@ -68,8 +68,14 @@ func _on_ElfEnemy_area_entered(area):
 			area.queue_free()
 			self.gifted = true
 			self.move_speed = (base_speed + base_speed)
-			$AnimatedSprite.animation = "gift"
-			$AnimatedSprite.frame = self.elf_color
+			if self.elf_color == 0:
+				$AnimatedSprite.play("gift_r")
+			if self.elf_color == 1:
+				$AnimatedSprite.play("gift_g")
+			if self.elf_color == 2:
+				$AnimatedSprite.play("gift_b")
+			if self.elf_color == 3:
+				$AnimatedSprite.play("gift_y")
 			$AnimatedSprite.flip_h = true
 			emit_signal("gift_successful_delivery")
 

@@ -1,30 +1,34 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scripts/Game/ElfEnemy.gd" type="Script" id=1]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-yellow1.png" type="Texture" id=2]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-yellow2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-red-stop2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-red-stop3.png" type="Texture" id=3]
 [ext_resource path="res://sprites/elf_enemy/elfff-enemy-red1.png" type="Texture" id=4]
 [ext_resource path="res://sprites/elf_enemy/elfff-enemy-red2.png" type="Texture" id=5]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-yellow-stop1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-blue-stop1.png" type="Texture" id=6]
 [ext_resource path="res://sprites/elf_enemy/elfff-enemy-green1.png" type="Texture" id=7]
 [ext_resource path="res://sprites/elf_enemy/elfff-enemy-green2.png" type="Texture" id=8]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-blue-stop1.png" type="Texture" id=9]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-red-stop1.png" type="Texture" id=10]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-red3.png" type="Texture" id=11]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-green3.png" type="Texture" id=12]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-blue3.png" type="Texture" id=13]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-yellow3.png" type="Texture" id=14]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-blue-stop2.png" type="Texture" id=15]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-blue-stop3.png" type="Texture" id=16]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-blue1.png" type="Texture" id=17]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-blue2.png" type="Texture" id=18]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-green-stop2.png" type="Texture" id=19]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-green-stop3.png" type="Texture" id=20]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-green-stop1.png" type="Texture" id=21]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-yellow-stop2.png" type="Texture" id=22]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-yellow-stop3.png" type="Texture" id=23]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-red-stop2.png" type="Texture" id=24]
-[ext_resource path="res://sprites/elf_enemy/elfff-enemy-red-stop3.png" type="Texture" id=25]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-red-stop1.png" type="Texture" id=9]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-green-stop1.png" type="Texture" id=10]
+[ext_resource path="res://sprites/elf_enemy/elfff-enemy-blue1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/elf_enemy/elfff-enemy-blue2.png" type="Texture" id=12]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-yellow-stop1.png" type="Texture" id=13]
+[ext_resource path="res://sprites/elf_enemy/walkback/elfff-enemy-red-walkback1.png" type="Texture" id=14]
+[ext_resource path="res://sprites/elf_enemy/walkback/elfff-enemy-red-walkback2.png" type="Texture" id=15]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-blue-stop2.png" type="Texture" id=16]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-blue-stop3.png" type="Texture" id=17]
+[ext_resource path="res://sprites/elf_enemy/walkback/elfff-enemy-yellow-walkback1.png" type="Texture" id=18]
+[ext_resource path="res://sprites/elf_enemy/walkback/elfff-enemy-yellow-walkback2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/elf_enemy/walkback/elfff-enemy-blue-walkback1.png" type="Texture" id=20]
+[ext_resource path="res://sprites/elf_enemy/walkback/elfff-enemy-blue-walkback2.png" type="Texture" id=21]
+[ext_resource path="res://sprites/elf_enemy/elfff-enemy-yellow1.png" type="Texture" id=22]
+[ext_resource path="res://sprites/elf_enemy/elfff-enemy-yellow2.png" type="Texture" id=23]
+[ext_resource path="res://sprites/elf_enemy/walkback/elfff-enemy-green-walkback1.png" type="Texture" id=24]
+[ext_resource path="res://sprites/elf_enemy/walkback/elfff-enemy-green-walkback2.png" type="Texture" id=25]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-yellow-stop2.png" type="Texture" id=26]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-yellow-stop3.png" type="Texture" id=27]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-green-stop2.png" type="Texture" id=28]
+[ext_resource path="res://sprites/elf_enemy/stop/elfff-enemy-green-stop3.png" type="Texture" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 8 )
@@ -33,7 +37,7 @@ extents = Vector2( 6, 8 )
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "run_y",
+"name": "shake_r",
 "speed": 2.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
@@ -43,7 +47,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
-"name": "stop_y",
+"name": "stop_b",
 "speed": 2.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
@@ -53,47 +57,62 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
-"name": "stop_b",
+"name": "stop_r",
 "speed": 2.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": false,
-"name": "stop_r",
+"name": "stop_g",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": false,
-"name": "gift",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "shake_b",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "run_b",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "shake_g",
+"frames": [ ExtResource( 13 ) ],
+"loop": false,
+"name": "stop_y",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 21 ) ],
-"loop": false,
-"name": "stop_g",
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "gift_r",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "shake_b",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "gift_y",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "gift_b",
 "speed": 2.0
 }, {
 "frames": [ ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
-"name": "shake_y",
+"name": "run_y",
 "speed": 2.0
 }, {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
 "loop": true,
-"name": "shake_r",
+"name": "gift_g",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "shake_y",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "shake_g",
 "speed": 2.0
 } ]
 
@@ -109,6 +128,6 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 1 )
 frames = SubResource( 2 )
-animation = "shake_y"
+animation = "gift_y"
 [connection signal="area_entered" from="." to="." method="_on_ElfEnemy_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

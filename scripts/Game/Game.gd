@@ -10,7 +10,7 @@ export var min_time = 2
 # Time to be removed from difficulty every spawn
 export var progression = 0.15
 # Max amount of times player can fail to deliver a present
-export var lives = 1
+export var lives = 3
 # Seconds after a failed delivery that spawns will not happen
 export var fail_time_buffer = 4
 
@@ -97,6 +97,7 @@ func _lose_life():
 func _reset_game():
 	$Timer.stop()
 	$Character.pos = 0
+	$Character.movable = false
 	$FailureText.visible = true
 	$FailureText/Cooldown.start(fail_time_buffer)
 	
@@ -118,3 +119,4 @@ func _on_Cooldown_timeout():
 			enemy.queue_free()
 		$Timer.start(difficulty)
 		$FailureText.visible = false
+		$Character.movable = true
