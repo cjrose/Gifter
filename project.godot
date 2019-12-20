@@ -19,6 +19,10 @@ config/name="Gifter"
 run/main_scene="res://_scenes/Menu.tscn"
 config/icon="res://sprites/player/elf-green.png"
 
+[autoload]
+
+Global="*res://scripts/Global.gd"
+
 [display]
 
 window/size/resizable=false

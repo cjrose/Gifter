@@ -1,7 +1,7 @@
 extends Node2D
 
 # Time before the game starts
-var initial_startup_time = 3
+var initial_startup_time = 2
 # This controls the seconds before another elf is spawned
 # gradually decreases over game lifespan
 export var difficulty = 4
@@ -10,7 +10,7 @@ export var min_time = 2
 # Time to be removed from difficulty every spawn
 export var progression = 0.15
 # Max amount of times player can fail to deliver a present
-export var lives = 3
+export var lives = 1
 # Seconds after a failed delivery that spawns will not happen
 export var fail_time_buffer = 4
 
@@ -18,7 +18,9 @@ export var fail_time_buffer = 4
 # 100 pts for successful gifting
 # -50 pts for a gift that reaches the end of the table without being picked up
 # -100 pts for letting the enemy elf reach the end of the table
-var score = 0
+#var score = 0
+# changed to autoload global
+onready var global_script = self.get_node("/root/Global")
 var points = [100, -50, -100]
 
 signal score_change
@@ -26,6 +28,7 @@ signal lives_change
 
 var rng = RandomNumberGenerator.new()
 var elf_enemy_scene = load("res://_scenes/Game/ElfEnemy.tscn")
+var game_over_scene = "res://_scenes/GameOver.tscn"
 
 func _ready():
 	rng.randomize()
@@ -81,18 +84,15 @@ func _on_gift_reached_end():
 	_update_score(self.points[1])
 
 func _update_score(points):
-	self.score += points
-	if self.score < 0:
-		self.score = 0
-	emit_signal("score_change", self.score)
+	self.global_script.score += points
+	if self.global_script.score < 0:
+		self.global_script.score = 0
+	emit_signal("score_change", self.global_script.score)
 
 func _lose_life():
 	self.lives -= 1
 	emit_signal("lives_change", self.lives)
-	if lives == 0:
-		pass
-	else:
-		_reset_game()
+	_reset_game()
 
 func _reset_game():
 	$Timer.stop()
@@ -110,8 +110,11 @@ func _reset_game():
 		present.queue_free()
 
 func _on_Cooldown_timeout():
-	var enemies = get_tree().get_nodes_in_group("enemy")
-	for enemy in enemies:
-		enemy.queue_free()
-	$Timer.start(difficulty)
-	$FailureText.visible = false
+	if self.lives == 0:
+		self.get_tree().change_scene(game_over_scene)
+	else:
+		var enemies = get_tree().get_nodes_in_group("enemy")
+		for enemy in enemies:
+			enemy.queue_free()
+		$Timer.start(difficulty)
+		$FailureText.visible = false
