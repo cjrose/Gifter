@@ -34,6 +34,7 @@ func _process(delta):
 		if carrying_present:
 			emit_signal("throw_present", pos, $AnimatedSprite.frame - 2)
 			$AnimatedSprite.frame = 0
+			carrying_present = false
 
 func _physics_process(delta):
 	self.position = Vector2(player_pos_list[pos][0], player_pos_list[pos][1])

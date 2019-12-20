@@ -1,0 +1,4 @@
+export_presets.cfg
+*.pck
+*.x86_64
+*.exe
