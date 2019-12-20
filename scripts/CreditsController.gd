@@ -8,17 +8,15 @@ var license_url = "https://cjrose.github.io/strg/gifter_licensing.html"
 func _on_BackBtn_mouse_entered():
 	$BackBtn.modulate = modulate_hover
 
-
 func _on_BackBtn_mouse_exited():
 	$BackBtn.modulate = modulate_not_hover
 
 func _on_BackBtn_pressed():
 	self.get_tree().change_scene(MenuScene)
 
-
 func _on_LicenseBtn_mouse_entered():
 	$LicenseBtn.modulate = modulate_hover
-	
+
 func _on_LicenseBtn_mouse_exited():
 	$LicenseBtn.modulate = modulate_not_hover
 

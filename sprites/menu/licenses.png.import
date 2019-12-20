@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/how_to_play.png-84a4f3c290aba59496c2e7a9e150692d.stex"
+path="res://.import/licenses.png-41592716c3e182deb95fed2f3ecd0cdc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/menu/how_to_play.png"
-dest_files=[ "res://.import/how_to_play.png-84a4f3c290aba59496c2e7a9e150692d.stex" ]
+source_file="res://sprites/menu/licenses.png"
+dest_files=[ "res://.import/licenses.png-41592716c3e182deb95fed2f3ecd0cdc.stex" ]
 
 [params]
 
