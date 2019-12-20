@@ -41,7 +41,6 @@ func _ready():
 	self.connect("gift_successful_delivery", $"/root/Game", "_on_gift_successful_delivery")
 	
 func _physics_process(delta):
-	# TODO add present collision detection
 	if moving and not gifted and not failed:
 		self.position += Vector2(-move_speed, 0)
 	
@@ -73,3 +72,15 @@ func _on_ElfEnemy_area_entered(area):
 			$AnimatedSprite.frame = self.elf_color
 			$AnimatedSprite.flip_h = true
 			emit_signal("gift_successful_delivery")
+
+
+func _on_AnimatedSprite_animation_finished():
+	# Only happens in the stop animation
+	if $AnimatedSprite.animation == "stop_r":
+		$AnimatedSprite.play("shake_r")
+	if $AnimatedSprite.animation == "stop_g":
+		$AnimatedSprite.play("shake_g")
+	if $AnimatedSprite.animation == "stop_b":
+		$AnimatedSprite.play("shake_b")
+	if $AnimatedSprite.animation == "stop_y":
+		$AnimatedSprite.play("shake_y")
