@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://scripts/MenuController.gd" type="Script" id=2]
 [ext_resource path="res://sprites/menu/title.png" type="Texture" id=3]
 [ext_resource path="res://sprites/menu/play.png" type="Texture" id=4]
-[ext_resource path="res://sprites/menu/howtoplay.png" type="Texture" id=5]
-[ext_resource path="res://sprites/menu/credits.png" type="Texture" id=6]
-[ext_resource path="res://sprites/menu/quit.png" type="Texture" id=7]
+[ext_resource path="res://sprites/menu/hf/play_hf.png" type="Texture" id=5]
+[ext_resource path="res://sprites/menu/howtoplay.png" type="Texture" id=6]
+[ext_resource path="res://sprites/menu/hf/howtoplay_hf.png" type="Texture" id=7]
+[ext_resource path="res://sprites/menu/credits.png" type="Texture" id=8]
+[ext_resource path="res://sprites/menu/hf/credits_hf.png" type="Texture" id=9]
+[ext_resource path="res://sprites/menu/quit.png" type="Texture" id=10]
+[ext_resource path="res://sprites/menu/hf/quit_hf.png" type="Texture" id=11]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -36,41 +40,29 @@ margin_top = 111.0
 margin_right = 964.0
 margin_bottom = 163.0
 texture_normal = ExtResource( 4 )
+texture_focused = ExtResource( 5 )
 
 [node name="HowToBtn" type="TextureButton" parent="VBoxContainer"]
 margin_top = 183.0
 margin_right = 964.0
 margin_bottom = 235.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
+texture_focused = ExtResource( 7 )
 
 [node name="CreditsBtn" type="TextureButton" parent="VBoxContainer"]
 margin_top = 255.0
 margin_right = 964.0
 margin_bottom = 307.0
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
 
 [node name="QuitBtn" type="TextureButton" parent="VBoxContainer"]
 margin_top = 327.0
 margin_right = 964.0
 margin_bottom = 379.0
-texture_normal = ExtResource( 7 )
-[connection signal="focus_entered" from="VBoxContainer/PlayBtn" to="VBoxContainer" method="_on_PlayBtn_focus_entered"]
-[connection signal="focus_exited" from="VBoxContainer/PlayBtn" to="VBoxContainer" method="_on_PlayBtn_focus_exited"]
-[connection signal="mouse_entered" from="VBoxContainer/PlayBtn" to="VBoxContainer" method="_on_PlayBtn_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/PlayBtn" to="VBoxContainer" method="_on_PlayBtn_mouse_exited"]
+texture_normal = ExtResource( 10 )
+texture_focused = ExtResource( 11 )
 [connection signal="pressed" from="VBoxContainer/PlayBtn" to="VBoxContainer" method="_on_PlayBtn_pressed"]
-[connection signal="focus_entered" from="VBoxContainer/HowToBtn" to="VBoxContainer" method="_on_HowToBtn_focus_entered"]
-[connection signal="focus_exited" from="VBoxContainer/HowToBtn" to="VBoxContainer" method="_on_HowToBtn_focus_exited"]
-[connection signal="mouse_entered" from="VBoxContainer/HowToBtn" to="VBoxContainer" method="_on_HowToBtn_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/HowToBtn" to="VBoxContainer" method="_on_HowToBtn_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/HowToBtn" to="VBoxContainer" method="_on_HowToBtn_pressed"]
-[connection signal="focus_entered" from="VBoxContainer/CreditsBtn" to="VBoxContainer" method="_on_CreditsBtn_focus_entered"]
-[connection signal="focus_exited" from="VBoxContainer/CreditsBtn" to="VBoxContainer" method="_on_CreditsBtn_focus_exited"]
-[connection signal="mouse_entered" from="VBoxContainer/CreditsBtn" to="VBoxContainer" method="_on_CreditsBtn_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/CreditsBtn" to="VBoxContainer" method="_on_CreditsBtn_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/CreditsBtn" to="VBoxContainer" method="_on_CreditsBtn_pressed"]
-[connection signal="focus_entered" from="VBoxContainer/QuitBtn" to="VBoxContainer" method="_on_QuitBtn_focus_entered"]
-[connection signal="focus_exited" from="VBoxContainer/QuitBtn" to="VBoxContainer" method="_on_QuitBtn_focus_exited"]
-[connection signal="mouse_entered" from="VBoxContainer/QuitBtn" to="VBoxContainer" method="_on_QuitBtn_mouse_entered"]
-[connection signal="mouse_exited" from="VBoxContainer/QuitBtn" to="VBoxContainer" method="_on_QuitBtn_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/QuitBtn" to="VBoxContainer" method="_on_QuitBtn_pressed"]
