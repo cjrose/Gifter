@@ -70,7 +70,7 @@ __meta__ = {
 position = Vector2( 512, 48 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 10
+frame = 13
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -78,10 +78,11 @@ __meta__ = {
 
 [node name="Droppers" type="Node2D" parent="."]
 editor/display_folded = true
-position = Vector2( 16, 0 )
+position = Vector2( 16, 16 )
 scale = Vector2( 4, 4 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="dropper_0" type="Sprite" parent="Droppers"]
@@ -114,7 +115,7 @@ scale = Vector2( 4, 4 )
 
 [node name="Tables" type="Node2D" parent="."]
 editor/display_folded = true
-position = Vector2( 32, 0 )
+position = Vector2( 32, 32 )
 scale = Vector2( 4, 4 )
 __meta__ = {
 "_edit_group_": true,
@@ -137,23 +138,18 @@ position = Vector2( 176, 128 )
 table_id = 3
 
 [node name="PlayerPositions" type="Node2D" parent="."]
-editor/display_folded = true
-position = Vector2( 16, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="pos0" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 160, 128 )
+position = Vector2( 160, 144 )
 
 [node name="pos1" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 160, 256 )
+position = Vector2( 160, 272 )
 
 [node name="pos2" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 160, 384 )
+position = Vector2( 160, 400 )
 
 [node name="pos3" type="Node2D" parent="PlayerPositions"]
-position = Vector2( 160, 512 )
+position = Vector2( 160, 528 )
 
 [node name="HUD" parent="." instance=ExtResource( 35 )]
 margin_left = 20.0
@@ -163,6 +159,7 @@ margin_bottom = 44.0
 
 [node name="FailureText" type="Label" parent="."]
 editor/display_folded = true
+visible = false
 margin_left = 400.0
 margin_top = 288.0
 margin_right = 640.0
