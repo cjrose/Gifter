@@ -17,6 +17,7 @@ func _ready():
 	dropping = true
 	viewport_size = get_viewport().size
 	counter = delay
+	$VBoxContainer/PlayBtn.grab_focus()
 
 func _physics_process(delta):
 	counter -= 1
