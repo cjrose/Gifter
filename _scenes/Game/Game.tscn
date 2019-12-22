@@ -1,18 +1,55 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/Game/Game.gd" type="Script" id=1]
-[ext_resource path="res://sprites/floor/FloorTiles.tres" type="TileSet" id=2]
-[ext_resource path="res://sprites/presents/red-present-pickup.png" type="Texture" id=3]
-[ext_resource path="res://sprites/presents/green-present-pickup.png" type="Texture" id=4]
-[ext_resource path="res://sprites/presents/blue-present-pickup.png" type="Texture" id=5]
-[ext_resource path="res://sprites/presents/yellow-present-pickup.png" type="Texture" id=6]
-[ext_resource path="res://_scenes/Game/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://_scenes/Game/Table.tscn" type="PackedScene" id=8]
-[ext_resource path="res://_scenes/Game/HUD.tscn" type="PackedScene" id=9]
-[ext_resource path="res://font/ps2p.tres" type="DynamicFont" id=10]
+[ext_resource path="res://sprites/FloorMap.tres" type="TileSet" id=2]
+[ext_resource path="res://sprites/window/window1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/window/window2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/window/window3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/window/window4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/window/window5.png" type="Texture" id=7]
+[ext_resource path="res://sprites/window/window6.png" type="Texture" id=8]
+[ext_resource path="res://sprites/window/window7.png" type="Texture" id=9]
+[ext_resource path="res://sprites/window/window8.png" type="Texture" id=10]
+[ext_resource path="res://sprites/window/window9.png" type="Texture" id=11]
+[ext_resource path="res://sprites/window/window10.png" type="Texture" id=12]
+[ext_resource path="res://sprites/window/window11.png" type="Texture" id=13]
+[ext_resource path="res://sprites/window/window12.png" type="Texture" id=14]
+[ext_resource path="res://sprites/window/window13.png" type="Texture" id=15]
+[ext_resource path="res://sprites/window/window14.png" type="Texture" id=16]
+[ext_resource path="res://sprites/window/window15.png" type="Texture" id=17]
+[ext_resource path="res://sprites/window/window16.png" type="Texture" id=18]
+[ext_resource path="res://sprites/window/window17.png" type="Texture" id=19]
+[ext_resource path="res://sprites/window/window18.png" type="Texture" id=20]
+[ext_resource path="res://sprites/window/window19.png" type="Texture" id=21]
+[ext_resource path="res://sprites/window/window20.png" type="Texture" id=22]
+[ext_resource path="res://sprites/window/window21.png" type="Texture" id=23]
+[ext_resource path="res://sprites/window/window22.png" type="Texture" id=24]
+[ext_resource path="res://sprites/window/window23.png" type="Texture" id=25]
+[ext_resource path="res://sprites/window/window24.png" type="Texture" id=26]
+[ext_resource path="res://sprites/window/window25.png" type="Texture" id=27]
+[ext_resource path="res://sprites/window/window26.png" type="Texture" id=28]
+[ext_resource path="res://sprites/presents/red-present-pickup.png" type="Texture" id=29]
+[ext_resource path="res://sprites/presents/green-present-pickup.png" type="Texture" id=30]
+[ext_resource path="res://sprites/presents/blue-present-pickup.png" type="Texture" id=31]
+[ext_resource path="res://sprites/presents/yellow-present-pickup.png" type="Texture" id=32]
+[ext_resource path="res://_scenes/Game/Player.tscn" type="PackedScene" id=33]
+[ext_resource path="res://_scenes/Game/Table.tscn" type="PackedScene" id=34]
+[ext_resource path="res://_scenes/Game/HUD.tscn" type="PackedScene" id=35]
+[ext_resource path="res://font/ps2p.tres" type="DynamicFont" id=36]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
@@ -23,7 +60,20 @@ scale = Vector2( 4, 4 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 1, 1, 0, 2, 1, 0, 3, 2, 0, 4, 2, 0, 5, 1, 0, 6, 2, 0, 7, 3, 0, 65536, 0, 0, 65537, 2, 0, 65538, 2, 0, 65539, 1, 0, 65540, 1, 0, 65541, 2, 0, 65542, 2, 0, 65543, 3, 0, 131072, 0, 0, 131073, 1, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 1, 0, 131078, 2, 0, 131079, 3, 0, 196608, 0, 0, 196609, 1, 0, 196610, 2, 0, 196611, 1, 0, 196612, 1, 0, 196613, 2, 0, 196614, 1, 0, 196615, 3, 0, 262144, 0, 0, 262145, 2, 0, 262146, 1, 0, 262147, 2, 0, 262148, 2, 0, 262149, 1, 0, 262150, 2, 0, 262151, 3, 0 )
+tile_data = PoolIntArray( 0, 4, 0, 1, 6, 0, 2, 5, 0, 3, 5, 0, 4, 6, 0, 5, 5, 0, 6, 6, 0, 7, 5, 0, 8, 7, 0, 65536, 0, 0, 65537, 1, 0, 65538, 2, 0, 65539, 1, 0, 65540, 2, 0, 65541, 2, 0, 65542, 1, 0, 65543, 1, 0, 65544, 3, 0, 131072, 0, 0, 131073, 2, 0, 131074, 1, 0, 131075, 2, 0, 131076, 1, 0, 131077, 1, 0, 131078, 2, 0, 131079, 1, 0, 131080, 3, 0, 196608, 0, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 2, 0, 196613, 1, 0, 196614, 2, 0, 196615, 2, 0, 196616, 3, 0, 262144, 0, 0, 262145, 2, 0, 262146, 1, 0, 262147, 2, 0, 262148, 1, 0, 262149, 2, 0, 262150, 1, 0, 262151, 1, 0, 262152, 3, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Window" type="AnimatedSprite" parent="."]
+position = Vector2( 576, 48 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+frame = 25
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Droppers" type="Node2D" parent="."]
 editor/display_folded = true
@@ -35,19 +85,19 @@ __meta__ = {
 
 [node name="dropper_0" type="Sprite" parent="Droppers"]
 position = Vector2( 12.5, 34 )
-texture = ExtResource( 3 )
+texture = ExtResource( 29 )
 
 [node name="dropper_1" type="Sprite" parent="Droppers"]
 position = Vector2( 12.5, 66 )
-texture = ExtResource( 4 )
+texture = ExtResource( 30 )
 
 [node name="dropper_2" type="Sprite" parent="Droppers"]
 position = Vector2( 12.5, 98 )
-texture = ExtResource( 5 )
+texture = ExtResource( 31 )
 
 [node name="dropper_3" type="Sprite" parent="Droppers"]
 position = Vector2( 12.5, 130 )
-texture = ExtResource( 6 )
+texture = ExtResource( 32 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2( 0.25, 0.25 )
@@ -57,7 +107,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Character" parent="." instance=ExtResource( 7 )]
+[node name="Character" parent="." instance=ExtResource( 33 )]
 position = Vector2( -96, 12 )
 scale = Vector2( 4, 4 )
 
@@ -70,18 +120,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="table_0" parent="Tables" instance=ExtResource( 8 )]
+[node name="table_0" parent="Tables" instance=ExtResource( 34 )]
 position = Vector2( 176, 32 )
 
-[node name="table_1" parent="Tables" instance=ExtResource( 8 )]
+[node name="table_1" parent="Tables" instance=ExtResource( 34 )]
 position = Vector2( 176, 64 )
 table_id = 1
 
-[node name="table_2" parent="Tables" instance=ExtResource( 8 )]
+[node name="table_2" parent="Tables" instance=ExtResource( 34 )]
 position = Vector2( 176, 96 )
 table_id = 2
 
-[node name="table_3" parent="Tables" instance=ExtResource( 8 )]
+[node name="table_3" parent="Tables" instance=ExtResource( 34 )]
 position = Vector2( 176, 128 )
 table_id = 3
 
@@ -104,7 +154,7 @@ position = Vector2( 160, 384 )
 [node name="pos3" type="Node2D" parent="PlayerPositions"]
 position = Vector2( 160, 512 )
 
-[node name="HUD" parent="." instance=ExtResource( 9 )]
+[node name="HUD" parent="." instance=ExtResource( 35 )]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 356.0
@@ -116,7 +166,7 @@ margin_left = 432.0
 margin_top = 32.0
 margin_right = 672.0
 margin_bottom = 83.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 36 )
 text = "YOU MISSED
 A DELIVERY"
 align = 1

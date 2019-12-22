@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://sprites/floor/floor-left.png" type="Texture" id=1]
 [ext_resource path="res://sprites/floor/floor-middle1.png" type="Texture" id=2]
 [ext_resource path="res://sprites/floor/floor-middle2.png" type="Texture" id=3]
 [ext_resource path="res://sprites/floor/floor-right.png" type="Texture" id=4]
+[ext_resource path="res://sprites/wall/wall1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/wall/wall2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/wall/wall3.png" type="Texture" id=7]
+[ext_resource path="res://sprites/wall/wall4.png" type="Texture" id=8]
 
 [node name="Floor" type="Node2D"]
 
@@ -26,3 +30,23 @@ texture = ExtResource( 3 )
 position = Vector2( 448, 64 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
+
+[node name="wall-left" type="Sprite" parent="."]
+position = Vector2( 64, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="wall-middle1" type="Sprite" parent="."]
+position = Vector2( 192, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
+[node name="wall-middle2" type="Sprite" parent="."]
+position = Vector2( 320, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+
+[node name="wall-right" type="Sprite" parent="."]
+position = Vector2( 448, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )

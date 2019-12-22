@@ -1,11 +1,57 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scripts/Game/Table.gd" type="Script" id=1]
-[ext_resource path="res://sprites/table/c-belt-long.png" type="Texture" id=2]
-[ext_resource path="res://sprites/table/c-belt2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-5.png" type="Texture" id=6]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-6.png" type="Texture" id=7]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-7.png" type="Texture" id=8]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-8.png" type="Texture" id=9]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-9.png" type="Texture" id=10]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-10.png" type="Texture" id=11]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-11.png" type="Texture" id=12]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-12.png" type="Texture" id=13]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-13.png" type="Texture" id=14]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-14.png" type="Texture" id=15]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-15.png" type="Texture" id=16]
+[ext_resource path="res://sprites/table/c-belt1/c-belt1-16.png" type="Texture" id=17]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-1.png" type="Texture" id=18]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-3.png" type="Texture" id=20]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-4.png" type="Texture" id=21]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-5.png" type="Texture" id=22]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-6.png" type="Texture" id=23]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-7.png" type="Texture" id=24]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-8.png" type="Texture" id=25]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-9.png" type="Texture" id=26]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-10.png" type="Texture" id=27]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-11.png" type="Texture" id=28]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-12.png" type="Texture" id=29]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-13.png" type="Texture" id=30]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-14.png" type="Texture" id=31]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-15.png" type="Texture" id=32]
+[ext_resource path="res://sprites/table/c-belt2/c-belt2-16.png" type="Texture" id=33]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 125, 5 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 16.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 16.0
+} ]
 
 [node name="Table" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -14,46 +60,84 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="TableStart" type="Node2D" parent="."]
-position = Vector2( -125, -8 )
+position = Vector2( -125, -10 )
 
 [node name="TableEnd" type="Node2D" parent="."]
-position = Vector2( 85, -18 )
+position = Vector2( 85, -20 )
 
-[node name="belt" type="Node2D" parent="."]
+[node name="Table" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="c-belt-long" type="Sprite" parent="belt"]
+[node name="Start" type="AnimatedSprite" parent="Table"]
+position = Vector2( -128, 0 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="table_0" type="AnimatedSprite" parent="Table"]
+position = Vector2( -112, 0 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="table_1" type="AnimatedSprite" parent="Table"]
+position = Vector2( -96, 0 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="table_2" type="AnimatedSprite" parent="Table"]
 position = Vector2( -80, 0 )
-texture = ExtResource( 2 )
+frames = SubResource( 3 )
+playing = true
 
-[node name="c-belt2" type="Sprite" parent="belt"]
-position = Vector2( -25, 0 )
-texture = ExtResource( 3 )
+[node name="table_3" type="AnimatedSprite" parent="Table"]
+position = Vector2( -64, 0 )
+frames = SubResource( 3 )
+playing = true
 
-[node name="c-belt3" type="Sprite" parent="belt"]
-position = Vector2( -9, 0 )
-texture = ExtResource( 3 )
+[node name="table_4" type="AnimatedSprite" parent="Table"]
+position = Vector2( -48, 0 )
+frames = SubResource( 3 )
+playing = true
 
-[node name="c-belt4" type="Sprite" parent="belt"]
-position = Vector2( 7, 0 )
-texture = ExtResource( 3 )
+[node name="table_5" type="AnimatedSprite" parent="Table"]
+position = Vector2( -32, 0 )
+frames = SubResource( 3 )
+playing = true
 
-[node name="c-belt5" type="Sprite" parent="belt"]
-position = Vector2( 23, 0 )
-texture = ExtResource( 3 )
+[node name="table_6" type="AnimatedSprite" parent="Table"]
+position = Vector2( -16, 0 )
+frames = SubResource( 3 )
+playing = true
 
-[node name="c-belt6" type="Sprite" parent="belt"]
-position = Vector2( 39, 0 )
-texture = ExtResource( 3 )
+[node name="table_7" type="AnimatedSprite" parent="Table"]
+frames = SubResource( 3 )
+playing = true
 
-[node name="c-belt7" type="Sprite" parent="belt"]
-position = Vector2( 55, 0 )
-texture = ExtResource( 3 )
+[node name="table_8" type="AnimatedSprite" parent="Table"]
+position = Vector2( 16, 0 )
+frames = SubResource( 3 )
+playing = true
 
-[node name="c-belt8" type="Sprite" parent="belt"]
-position = Vector2( 71, 0 )
-texture = ExtResource( 3 )
+[node name="table_9" type="AnimatedSprite" parent="Table"]
+position = Vector2( 32, 0 )
+frames = SubResource( 3 )
+playing = true
 
-[node name="c-belt9" type="Sprite" parent="belt"]
-position = Vector2( 87, 0 )
-texture = ExtResource( 3 )
+[node name="table_10" type="AnimatedSprite" parent="Table"]
+position = Vector2( 48, 0 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="table_11" type="AnimatedSprite" parent="Table"]
+position = Vector2( 64, 0 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="table_12" type="AnimatedSprite" parent="Table"]
+position = Vector2( 80, 0 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="table_13" type="AnimatedSprite" parent="Table"]
+position = Vector2( 96, 0 )
+frames = SubResource( 3 )
+playing = true
