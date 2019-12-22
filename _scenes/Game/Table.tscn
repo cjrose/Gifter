@@ -66,78 +66,86 @@ position = Vector2( -125, -10 )
 position = Vector2( 85, -20 )
 
 [node name="Table" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Start" type="AnimatedSprite" parent="Table"]
 position = Vector2( -128, 0 )
 frames = SubResource( 2 )
+frame = 11
 playing = true
 
 [node name="table_0" type="AnimatedSprite" parent="Table"]
 position = Vector2( -112, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_1" type="AnimatedSprite" parent="Table"]
 position = Vector2( -96, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_2" type="AnimatedSprite" parent="Table"]
 position = Vector2( -80, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_3" type="AnimatedSprite" parent="Table"]
 position = Vector2( -64, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_4" type="AnimatedSprite" parent="Table"]
 position = Vector2( -48, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_5" type="AnimatedSprite" parent="Table"]
 position = Vector2( -32, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_6" type="AnimatedSprite" parent="Table"]
 position = Vector2( -16, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_7" type="AnimatedSprite" parent="Table"]
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_8" type="AnimatedSprite" parent="Table"]
 position = Vector2( 16, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_9" type="AnimatedSprite" parent="Table"]
 position = Vector2( 32, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_10" type="AnimatedSprite" parent="Table"]
 position = Vector2( 48, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_11" type="AnimatedSprite" parent="Table"]
 position = Vector2( 64, 0 )
 frames = SubResource( 3 )
+frame = 11
 playing = true
 
 [node name="table_12" type="AnimatedSprite" parent="Table"]
 position = Vector2( 80, 0 )
 frames = SubResource( 3 )
-playing = true
-
-[node name="table_13" type="AnimatedSprite" parent="Table"]
-position = Vector2( 96, 0 )
-frames = SubResource( 3 )
+frame = 11
 playing = true
