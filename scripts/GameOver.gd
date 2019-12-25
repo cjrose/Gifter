@@ -10,12 +10,13 @@ var losesfx = load("res://sfx/lose_screen.ogg")
 
 func _ready():
 	musicsfx.stop()
-	$VBoxContainer/PointsLabel.text = "SCORE: " + ("%08d" % global_script.score)
 	if global_script.score >= global_script.point_goal:
+		$VBoxContainer/PointsLabel.text = "\n\n\n\nSCORE: " + ("%08d" % global_script.score)
 		$SFX.stream = winsfx
 		$VBoxContainer/PointsLabel.text += "\nYOU GAVE SANTA ENOUGH PRESENTS\nTO SAVE CHRISTMAS\n\nCONGRATULATIONS!"
 		$Background.visible = true
 	else:
+		$VBoxContainer/PointsLabel.text = "SCORE: " + ("%08d" % global_script.score)
 		$SFX.stream = losesfx
 		$Background.visible = false
 	$VBoxContainer/HBoxContainer2/BackToMenuBtn.grab_focus()
