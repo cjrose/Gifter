@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/HTPController.gd" type="Script" id=1]
 [ext_resource path="res://sprites/menu/howtoplay.png" type="Texture" id=2]
 [ext_resource path="res://sprites/menu/tutorial.png" type="Texture" id=3]
 [ext_resource path="res://sprites/menu/back.png" type="Texture" id=4]
-[ext_resource path="res://sprites/menu/hf/back_hf.png" type="Texture" id=5]
 
 [node name="HowToPlay" type="MarginContainer"]
 anchor_right = 1.0
@@ -38,5 +37,4 @@ margin_top = 508.0
 margin_right = 964.0
 margin_bottom = 560.0
 texture_normal = ExtResource( 4 )
-texture_focused = ExtResource( 5 )
 [connection signal="pressed" from="HTPController/BackBtn" to="HTPController" method="_on_BackBtn_pressed"]

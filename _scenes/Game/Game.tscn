@@ -52,6 +52,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 512.0 ]
 }
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = "GameSFX"
+
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
 one_shot = true
@@ -70,7 +73,7 @@ __meta__ = {
 position = Vector2( 512, 48 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 10
+frame = 8
 playing = true
 __meta__ = {
 "_edit_lock_": true

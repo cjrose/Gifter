@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/janglebells2.ogg-65d4ee3128b98a5a68a939b2f8eeb1a9.oggstr"
+
+[deps]
+
+source_file="res://sfx/janglebells2.ogg"
+dest_files=[ "res://.import/janglebells2.ogg-65d4ee3128b98a5a68a939b2f8eeb1a9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

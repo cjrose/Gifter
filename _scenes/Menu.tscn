@@ -32,34 +32,34 @@ script = ExtResource( 2 )
 
 [node name="Logo" type="TextureRect" parent="VBoxContainer"]
 margin_right = 964.0
-margin_bottom = 91.0
+margin_bottom = 89.0
 texture = ExtResource( 3 )
 
 [node name="PlayBtn" type="TextureButton" parent="VBoxContainer"]
-margin_top = 111.0
+margin_top = 109.0
 margin_right = 964.0
-margin_bottom = 163.0
+margin_bottom = 161.0
 texture_normal = ExtResource( 4 )
 texture_focused = ExtResource( 5 )
 
 [node name="HowToBtn" type="TextureButton" parent="VBoxContainer"]
-margin_top = 183.0
+margin_top = 181.0
 margin_right = 964.0
-margin_bottom = 235.0
+margin_bottom = 233.0
 texture_normal = ExtResource( 6 )
 texture_focused = ExtResource( 7 )
 
 [node name="CreditsBtn" type="TextureButton" parent="VBoxContainer"]
-margin_top = 255.0
+margin_top = 253.0
 margin_right = 964.0
-margin_bottom = 307.0
+margin_bottom = 305.0
 texture_normal = ExtResource( 8 )
 texture_focused = ExtResource( 9 )
 
 [node name="QuitBtn" type="TextureButton" parent="VBoxContainer"]
-margin_top = 327.0
+margin_top = 325.0
 margin_right = 964.0
-margin_bottom = 379.0
+margin_bottom = 377.0
 texture_normal = ExtResource( 10 )
 texture_focused = ExtResource( 11 )
 [connection signal="pressed" from="VBoxContainer/PlayBtn" to="VBoxContainer" method="_on_PlayBtn_pressed"]

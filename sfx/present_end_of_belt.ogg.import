@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/present_end_of_belt.ogg-c310574871df473cb6a0cecaa2e02108.oggstr"
+
+[deps]
+
+source_file="res://sfx/present_end_of_belt.ogg"
+dest_files=[ "res://.import/present_end_of_belt.ogg-c310574871df473cb6a0cecaa2e02108.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

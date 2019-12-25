@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/placeholder-present-pickup.png-102c77df52a73fc8db82e7690b92827e.stex"
+path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/presents/placeholder-present-pickup.png"
-dest_files=[ "res://.import/placeholder-present-pickup.png-102c77df52a73fc8db82e7690b92827e.stex" ]
+source_file="res://icon.png"
+dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
 
 [params]
 

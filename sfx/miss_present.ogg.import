@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/miss_present.ogg-30e8024b1781f83d4a21a4070d9b8d3f.oggstr"
+
+[deps]
+
+source_file="res://sfx/miss_present.ogg"
+dest_files=[ "res://.import/miss_present.ogg-30e8024b1781f83d4a21a4070d9b8d3f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

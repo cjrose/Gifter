@@ -8,7 +8,6 @@
 [ext_resource path="res://sprites/player/elf-blue.png" type="Texture" id=6]
 [ext_resource path="res://sprites/player/elf-yellow.png" type="Texture" id=7]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 12 )
 
@@ -33,3 +32,6 @@ frames = SubResource( 2 )
 
 [node name="present_loc" type="Node2D" parent="."]
 position = Vector2( 6, -4 )
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = "PlayerSFX"

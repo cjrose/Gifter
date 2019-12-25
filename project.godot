@@ -16,12 +16,17 @@ _global_script_class_icons={
 [application]
 
 config/name="Gifter"
-run/main_scene="res://_scenes/Menu.tscn"
-config/icon="res://sprites/player/elf-green.png"
+run/main_scene="res://_scenes/SplashScreen.tscn"
+boot_splash/image="res://sprites/menu/logo.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
+MenuSFX="*res://_scenes/MenuSFX.tscn"
+MusicPlayer="*res://_scenes/MusicPlayer.tscn"
 
 [display]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gift_to_elf.ogg-baf6aab7110723554ad386971dc448fd.oggstr"
+
+[deps]
+
+source_file="res://sfx/gift_to_elf.ogg"
+dest_files=[ "res://.import/gift_to_elf.ogg-baf6aab7110723554ad386971dc448fd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

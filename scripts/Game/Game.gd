@@ -10,7 +10,7 @@ export var min_time = 1.5
 # Time to be removed from difficulty every spawn
 export var progression = 0.2
 # Max amount of times player can fail to deliver a present
-export var lives = 3
+export var lives = 1
 # Seconds after a failed delivery that spawns will not happen
 export var fail_time_buffer = 4
 
@@ -30,12 +30,18 @@ var rng = RandomNumberGenerator.new()
 var elf_enemy_scene = load("res://_scenes/Game/ElfEnemy.tscn")
 var game_over_scene = "res://_scenes/GameOver.tscn"
 
+# sfx
+var gift_to_elf = load("res://sfx/gift_to_elf.ogg")
+var miss_present = load("res://sfx/miss_present.ogg")
+var present_end_of_belt = load("res://sfx/present_end_of_belt.ogg")
+
 func _ready():
 	rng.randomize()
 	$Timer.start(initial_startup_time)
 	self.connect("score_change", $HUD, "_on_score_change")
 	self.connect("lives_change", $HUD, "_on_lives_change")
 	emit_signal("lives_change", self.lives)
+	global_script.score = 0
 
 func _on_Timer_timeout():
 	_spawn_elf()
@@ -74,13 +80,19 @@ func _spawn_elf():
 		new_instance.moving = true
 
 func _on_gift_failed_delivery():
+	$SFX.stream = miss_present
+	$SFX.play()
 	_lose_life()
 	_update_score(self.points[2])
 
 func _on_gift_successful_delivery():
+	$SFX.stream = gift_to_elf
+	$SFX.play()
 	_update_score(self.points[0])
 
 func _on_gift_reached_end():
+	$SFX.stream = miss_present
+	$SFX.play()
 	_update_score(self.points[1])
 
 func _update_score(points):

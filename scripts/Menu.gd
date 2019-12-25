@@ -11,12 +11,15 @@ export var delay = 5
 var counter
 
 var rng = RandomNumberGenerator.new()
+onready var musicplayer = get_node("/root/MusicPlayer")
 
 func _ready():
 	rng.randomize()
 	dropping = true
 	viewport_size = get_viewport().size
 	counter = delay
+	if not musicplayer.playing:
+		musicplayer.play()
 
 func _physics_process(delta):
 	counter -= 1
