@@ -1,5 +1,5 @@
 extends Node2D
 
 # points goal whether or not the player wins or loses
-export var point_goal = 0
-var score = 30000
+export var point_goal = 30000
+var score = 0
