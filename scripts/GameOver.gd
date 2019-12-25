@@ -17,6 +17,7 @@ func _ready():
 		$Background.visible = true
 	else:
 		$SFX.stream = losesfx
+		$Background.visible = false
 	$VBoxContainer/HBoxContainer2/BackToMenuBtn.grab_focus()
 
 func _on_BackToMenuBtn_pressed():

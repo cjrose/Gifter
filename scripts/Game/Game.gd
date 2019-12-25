@@ -10,7 +10,7 @@ export var min_time = 1.5
 # Time to be removed from difficulty every spawn
 export var progression = 0.2
 # Max amount of times player can fail to deliver a present
-export var lives = 1
+export var lives = 3
 # Seconds after a failed delivery that spawns will not happen
 export var fail_time_buffer = 4
 

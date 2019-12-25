@@ -3,3 +3,4 @@ export_presets.cfg
 *.x86_64
 *.exe
 *.zip
+/export/*
